@@ -259,7 +259,7 @@
     <p style="color:black;">19:30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EXAMEN</p>
   </div>
 
-  <style>
+<style>
   .imagenes-laterales {
     flex-basis: 30%;
     display: flex;
@@ -270,23 +270,29 @@
     margin-top: 150px;
   }
 
-  /* Ajuste para pantallas pequeñas (celulares) */
+  .imagenes-laterales img {
+    width: 250px; /* tamaño normal en PC */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  /* En pantallas pequeñas (celulares) */
   @media (max-width: 768px) {
     .imagenes-laterales {
-      flex-basis: 100%;
-      margin-top: 50px;
-      gap: 30px;
+      flex-basis: 40%; /* un poco más de espacio para las imágenes */
+      margin-top: 100px;
+      gap: 40px;
     }
 
     .imagenes-laterales img {
-      width: 90%; /* agranda las imágenes en móviles */
+      width: 320px; /* más grandes en celular */
+      max-width: 100%; /* evita que se desborden */
       height: auto;
     }
   }
 </style>
-
-
-
+  
 <div class="imagenes-laterales">    
     <img src="IMAGENES/fachada.jpg" 
          style="width: 100%; max-width: 350px; border-radius: 18px; box-shadow: 0 6px 18px rgba(0,0,0,0.3); object-fit: cover;">
@@ -449,6 +455,7 @@
   
 </body>
 </html>
+
 
 
 

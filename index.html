@@ -20,9 +20,17 @@
       text-align: center;
       padding: 40px 20px;
     }
+
+    /* ===== TÍTULO PRINCIPAL ===== */
     header h1 {
       margin: 0;
-      font-size: 2.2em;
+      font-size: 2.5em; /* tamaño en PC */
+      line-height: 1.2;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      white-space: normal; /* permite que el texto baje en varias líneas */
+      padding: 0 15px;
+      max-width: 100%;
     }
 
     header p {
@@ -30,6 +38,7 @@
       font-size: 1.2em;
     }
 
+    /* ===== SECCIONES ===== */
     section {
       padding: 40px 20px;
       max-width: 900px;
@@ -64,11 +73,35 @@
       padding: 20px;
       margin-top: 40px;
     }
+
+    /* ===== ADAPTACIÓN PARA CELULARES ===== */
+    @media (max-width: 768px) {
+      header {
+        padding: 25px 15px;
+      }
+
+      header h1 {
+        font-size: 1.8em; /* más pequeño en celulares */
+        line-height: 1.3;
+        padding: 0 10px;
+        white-space: normal; /* asegura salto de línea */
+      }
+
+      header p {
+        font-size: 1em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.5em; /* aún más pequeño */
+        line-height: 1.4;
+      }
+    }
   </style>
 </head>
-
+  
 <body style="background-color:#A0A434;">
-
   <!-- HEADER -->
   <header style="display:flex; align-items:center; justify-content:flex-start; padding:20px; background-color:#A0A434;">
     <img src="IMAGENES/LOGO_PRINCIPAL.jpeg" 
@@ -280,18 +313,26 @@
   /* En pantallas pequeñas (celulares) */
   @media (max-width: 768px) {
     .imagenes-laterales {
-      flex-basis: 40%; /* un poco más de espacio para las imágenes */
-      margin-top: 100px;
-      gap: 40px;
+      flex-basis: 50%; /* les damos más espacio en el lado derecho */
+      margin-top: 80px;
+      gap: 50px;
     }
 
     .imagenes-laterales img {
-      width: 320px; /* más grandes en celular */
-      max-width: 100%; /* evita que se desborden */
+      width: 380px; /* las agranda bastante */
+      max-width: 95vw; /* no permite que se salgan de la pantalla */
       height: auto;
     }
   }
+
+  /* Opcional: en pantallas muy pequeñas (menos de 500px) */
+  @media (max-width: 500px) {
+    .imagenes-laterales img {
+      width: 95vw; /* casi todo el ancho visible */
+    }
+  }
 </style>
+
   
 <div class="imagenes-laterales">    
     <img src="IMAGENES/fachada.jpg" 
@@ -455,6 +496,7 @@
   
 </body>
 </html>
+
 
 
 
